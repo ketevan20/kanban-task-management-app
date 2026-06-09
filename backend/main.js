@@ -5,9 +5,12 @@ const boardRoutes = require("./routes/boards")
 const columnRoutes = require("./routes/columns")
 const taskRoutes = require("./routes/tasks")
 const subtaskRoutes = require("./routes/subtasks")
+const cors = require('cors')
 
 const app = express()
 app.use(express.json())
+
+app.use(cors())
 
 connectToDB()
 
