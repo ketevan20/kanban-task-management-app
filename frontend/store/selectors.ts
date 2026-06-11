@@ -18,3 +18,8 @@ export const selectTasksByColumn = (columnId: string) => (state: RootState) =>
 export const selectSubtasksByTask = (taskId: string) => (state: RootState) =>
     Object.values(state.subtasks.entities)
         .filter(subtask => subtask.taskId === taskId)
+
+        
+export const selectActiveModal = (state: RootState) => state.ui.activeModal
+export const selectSelectedTaskId = (state: RootState) => state.ui.selectedTaskId
+export const selectSelectedColumnId = (state: RootState) => state.ui.selectedColumnId

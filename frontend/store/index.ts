@@ -2,6 +2,7 @@ import boardsReducer from './slices/boardsSlice'
 import columnsReducer from './slices/columnsSlice'
 import tasksReducer from './slices/tasksSlice'
 import subtasksReducer from './slices/subtasksSlice'
+import uiReducer from './slices/uiSlice'
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
@@ -10,7 +11,8 @@ export const store = configureStore({
         boards: boardsReducer,
         columns: columnsReducer,
         tasks: tasksReducer,
-        subtasks: subtasksReducer
+        subtasks: subtasksReducer,
+        ui: uiReducer
     }
 })
 

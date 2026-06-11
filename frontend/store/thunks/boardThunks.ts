@@ -8,6 +8,7 @@ import { setSubtasks } from '../slices/subtasksSlice'
 export const fetchBoards = () => async (dispatch: AppDispatch) => {
     try {
         const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/boards`)
+        if(res.data.length > 0) dispatch(setActiveBoardId(res.data[0]._id))
         dispatch(setBoards(res.data))
     } catch (err) {
         console.error("fetchBoards failed:", err)
